@@ -264,10 +264,10 @@ void draw() {
       
       //move towards fighter
         if (enemyX > -245) {
-          if (enemyY1[4]+30 > fighterY && enemyY1[4] >= 5) {
+          if (enemyY1[4]+30 > fighterY + 25 && enemyY1[4] >= 5) {
             for(int i = 0; i < 5 ; ++i) enemyY1[i] -= 2;
           }
-          if (enemyY1[4]+30 < fighterY && enemyY1[4] <= 414) {
+          if (enemyY1[4]+30 < fighterY + 25 && enemyY1[4] <= 414) {
             for(int i = 0; i < 5 ; ++i) enemyY1[i] += 2;
           }
         }
@@ -325,12 +325,12 @@ void draw() {
        enemyX += 4;
      //move towards fighter
      if (enemyX > -245) {
-        if (enemyY2[2]+30 > fighterY && enemyY2[4] >= 5) {
+        if (enemyY2[2]+30 > fighterY + 25 && enemyY2[4] >= 5) {
           for(int i = 0; i < 5 ; ++i){
             enemyY2[i] -= 2;
           }
         }
-        if (enemyY2[2]+30 < fighterY && enemyY2[0] <= 414) {
+        if (enemyY2[2]+30 < fighterY + 25 && enemyY2[0] <= 414) {
           for(int i = 0; i < 5 ; ++i) enemyY2[i] += 2;
         }
      }
@@ -383,10 +383,10 @@ void draw() {
        enemyX += 4;
      //move towards fighter
      if (enemyX > -245) {
-        if (enemyY3[8]+30 > fighterY && enemyY3[6] >= 5) {
+        if (enemyY3[8]+30 > fighterY + 25 && enemyY3[6] >= 5) {
           for(int i = 0; i < 9 ; ++i) if(i != 4) enemyY3[i] -= 2;
         }
-        if (enemyY3[8]+30 < fighterY && enemyY3[2] <= 414) {
+        if (enemyY3[8]+30 < fighterY + 25 && enemyY3[2] <= 414) {
           for(int i = 0; i < 9 ; ++i) if(i != 4) enemyY3[i] += 2;
         }
      }
@@ -674,7 +674,7 @@ void draw() {
       break;
     
     case "enemyY":
-      enemyY = (int)random(34 + hpFrameY, height - 64);
+      enemyY = (int)random(3, height - 64);
       break;
     
     case "enemyX1":

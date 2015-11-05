@@ -157,14 +157,14 @@ void draw(){
       if (fighterX < width - 59 && rightPressed) fighterX += 5;
   
   //enemies
-  switch(waveCount %= 3){
+  switch(waveCount){
     case 1:
       for(int count = 0; count < 5; ++count){
         image(enemy1, enemyX + 62 * count, enemyY);
       }
       enemyX += 4;
       if(enemyX > 644){
-        ++waveCount;
+        waveCount = 2;
         initialize("enemyX");
       }
       break;
@@ -176,12 +176,12 @@ void draw(){
       }
       enemyX += 4;
       if(enemyX > 644){
-        ++waveCount;
+        waveCount = 3;
         initialize("enemyX");
       }
       break;
       
-    case 0:    
+    case 3:    
       while(enemyY > 264 || enemyY < 216) enemyY = (int)(random(216, 265));
         for(int i = 0; i < 3; ++i){
           for(int j = 0; j < 3; ++j){
@@ -192,7 +192,7 @@ void draw(){
         }
         enemyX += 4;
         if(enemyX > 644){
-          ++waveCount;
+          waveCount = 1;
           initialize("enemyX");
         }
           break;
